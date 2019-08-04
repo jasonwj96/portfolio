@@ -29,7 +29,13 @@
     padding: 5px 20px;
 
     #brand {
-      font-size: 1.2em;
+      font-size: 1em;
+      pointer-events: none;
+      display: flex;
+      height: fit-content;
+      width: fit-content;
+      align-items: flex-start;
+      margin: 0 auto 0 30px;
 
       p {
         font-size: 2em;
@@ -37,30 +43,41 @@
         margin: 0;
       }
 
-      p::after {
-        content: ".";
-        margin: 0;
-        padding: 0;
-
-        color: #ff0040;
+      #bar {
+        width: 5px;
+        margin: 10px 0 0 5px;
+        height: 30px;
+        border-radius: 10px;
+        background-color: #ff0040;
       }
     }
 
     #toggle-btn {
+      @include button();
       width: 40px;
       height: 40px;
-      border-radius: 50%;
-      border: none;
-      background-color: #fff;
-      outline: none;
+      border-radius: 20px;
       transition-property: background-color;
       transition-duration: 200ms;
       transition-timing-function: ease-in-out;
 
-      &:hover {
-        color: #fff;
-        background-color: #ff0040;
+      i {
+        font-size: 1.5em;
       }
+    }
+
+    #menu-btn {
+      @include button();
+      cursor: pointer;
+      margin: 10px;
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      transition-property: color;
+      transition-duration: 200ms;
+      transition-timing-function: ease-in-out;
+      padding: 5px;
+      border-radius: 50%;
 
       i {
         font-size: 1.5em;

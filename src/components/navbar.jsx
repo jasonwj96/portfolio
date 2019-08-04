@@ -12,7 +12,7 @@ const Navbar = () => {
     } else {
       parent.id = "light";
     }
-  });
+  }, [darkTheme]);
 
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
@@ -23,13 +23,19 @@ const Navbar = () => {
       <div id="navbar-top">
         <div id="brand">
           <p>JW</p>
+          <div id="bar" />
         </div>
         <button id="toggle-btn" onClick={toggleTheme}>
-          {darkTheme ? <i class="fas fa-moon" /> : <i class="fas fa-sun" />}
+          {darkTheme ? (
+            <i className="fas fa-sun" />
+          ) : (
+            <i className="fas fa-moon" />
+          )}
+        </button>
+        <button id="menu-btn">
+          <i className="fas fa-bars" />
         </button>
       </div>
-
-      <p>Navbar works</p>
     </div>
   );
 };

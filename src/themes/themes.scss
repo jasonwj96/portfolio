@@ -1,5 +1,48 @@
 $global-font: "Open Sans", sans-serif;
 
+@mixin button() {
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    z-index: 2;
+    content: "";
+    position: absolute;
+    background-color: #ff0040;
+    width: inherit;
+    height: inherit;
+    margin: auto;
+    padding: 0;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    transform: translateX(-100px);
+    transition-property: transform;
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  &:hover {
+    &::before {
+      transform: translateX(0px);
+    }
+
+    i {
+      color: #fff;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      position: relative;
+    }
+  }
+}
+
 @mixin dark-theme() {
   $primary-dark: #000;
   //Global
@@ -20,11 +63,14 @@ $global-font: "Open Sans", sans-serif;
 
       #toggle-btn {
         color: #fff;
-        background-color: $primary-dark;
+        background-color: #fff;
 
-        &:hover {
+        background-color: $primary-dark;
+      }
+
+      #menu-btn {
+        i {
           color: #fff;
-          background-color: #ff0040;
         }
       }
     }
@@ -53,10 +99,10 @@ $global-font: "Open Sans", sans-serif;
         color: #111;
         background-color: #fff;
 
-        &:hover {
-          color: #fff;
-          background-color: #ff0040;
-        }
+        // &:hover {
+        //   color: #fff;
+        //   background-color: #ff0040;
+        // }
       }
     }
   }
