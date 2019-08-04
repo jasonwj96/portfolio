@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [darkTheme, setDarkTheme] = useState(true);
-  const [toggleMenu, setToggleMenu] = useState(true);
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   useEffect(() => {
     const parent = document.getElementById("navbar-container").parentElement;
@@ -21,12 +21,16 @@ const Navbar = () => {
 
     if (toggleMenu) {
       bars[0].style.animationName = "expandOverlay";
+      bars[0].style.animationDelay = "0s";
       bars[1].style.animationName = "expandOverlay";
       bars[2].style.animationName = "expandOverlay";
+      bars[2].style.animationDelay = "0.5s";
     } else {
       bars[0].style.animationName = "collapseOverlay";
+      bars[0].style.animationDelay = "0.5s";
       bars[1].style.animationName = "collapseOverlayReverse";
       bars[2].style.animationName = "collapseOverlay";
+      bars[2].style.animationDelay = "0s";
     }
   }, [toggleMenu]);
 
@@ -54,9 +58,9 @@ const Navbar = () => {
         </button>
         <button id="menu-btn" onClick={expandMenu}>
           {toggleMenu ? (
-            <i className="fas fa-bars" />
-          ) : (
             <i className="fas fa-times" />
+          ) : (
+            <i className="fas fa-bars" />
           )}
         </button>
       </div>
