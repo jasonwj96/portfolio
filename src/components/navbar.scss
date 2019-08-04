@@ -1,10 +1,16 @@
 @import "../themes/themes.scss";
 
-// @keyframes rotateIcon {
-//   to {
-//     transform: rotateY(180deg);
-//   }
-// }
+@keyframes expandOverlay {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes collapseOverlay {
+  to {
+    transform: translateY(100%);
+  }
+}
 
 #navbar-container {
   display: flex;
@@ -20,6 +26,7 @@
     display: flex;
     height: auto;
     width: 100%;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     transition-property: background-color;
@@ -36,11 +43,13 @@
       width: fit-content;
       align-items: flex-start;
       margin: 0 auto 0 30px;
+      position: relative;
 
       p {
         font-size: 2em;
         font-weight: bold;
         margin: 0;
+        position: relative;
       }
 
       #bar {
@@ -62,6 +71,7 @@
       transition-timing-function: ease-in-out;
 
       i {
+        position: fixed;
         font-size: 1.5em;
       }
     }
@@ -82,6 +92,48 @@
       i {
         font-size: 1.5em;
       }
+    }
+  }
+
+  #navbar-overlay {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 70px 0 0 0;
+    overflow: hidden;
+
+    .overlay-bar:nth-child(1) {
+      animation-delay: 0ms;
+    }
+
+    .overlay-bar:nth-child(2) {
+      animation-delay: 300ms;
+    }
+
+    .overlay-bar:nth-child(3) {
+      animation-delay: 500ms;
+    }
+
+    .overlay-bar {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      height: 100%;
+      flex-grow: 1;
+      width: 0;
+      animation-name: none;
+      animation-duration: 400ms;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+      transform: translateY(100%);
+    }
+
+    .flip {
+      transform: rotate(180deg);
+      transition-duration: 0ms;
+      animation-duration: 0ms;
     }
   }
 }

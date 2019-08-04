@@ -5,13 +5,14 @@ $global-font: "Open Sans", sans-serif;
   outline: none;
   position: relative;
   overflow: hidden;
-  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translate3d(0, 0, 10px);
+  z-index: inherit;
 
   &::before {
-    z-index: 2;
+    z-index: inherit;
     content: "";
     position: absolute;
     background-color: #ff0040;
@@ -22,7 +23,7 @@ $global-font: "Open Sans", sans-serif;
     top: 0;
     left: 0;
     border-radius: inherit;
-    transform: translateX(-100px);
+    transform: translateX(-100%);
     transition-property: transform;
     transition-duration: 400ms;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -35,7 +36,6 @@ $global-font: "Open Sans", sans-serif;
 
     i {
       color: #fff;
-      z-index: 3;
       top: 0;
       left: 0;
       position: relative;
@@ -44,7 +44,7 @@ $global-font: "Open Sans", sans-serif;
 }
 
 @mixin dark-theme() {
-  $primary-dark: #000;
+  $primary-dark: #0e0e0e;
   //Global
   background-color: $primary-dark;
   color: #fff;
@@ -64,7 +64,6 @@ $global-font: "Open Sans", sans-serif;
       #toggle-btn {
         color: #fff;
         background-color: #fff;
-
         background-color: $primary-dark;
       }
 
@@ -72,6 +71,12 @@ $global-font: "Open Sans", sans-serif;
         i {
           color: #fff;
         }
+      }
+    }
+
+    #navbar-overlay {
+      .overlay-bar {
+        background-color: #000;
       }
     }
   }
@@ -98,11 +103,12 @@ $global-font: "Open Sans", sans-serif;
       #toggle-btn {
         color: #111;
         background-color: #fff;
+      }
+    }
 
-        // &:hover {
-        //   color: #fff;
-        //   background-color: #ff0040;
-        // }
+    #navbar-overlay {
+      .overlay-bar {
+        background-color: #e7e7e7;
       }
     }
   }
