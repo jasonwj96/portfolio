@@ -1,0 +1,20 @@
+$global-font: "Open Sans", sans-serif;
+
+@mixin dark-theme() {
+  //Global
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+@mixin light-theme() {
+  //Global
+  background-color: #fff;
+}
+
+#dark {
+  @include dark-theme();
+}
+
+#light {
+  @include light-theme();
+}
