@@ -7,8 +7,22 @@
 }
 
 @keyframes collapseOverlay {
+  from {
+    transform: translateY(0);
+  }
+
   to {
     transform: translateY(100%);
+  }
+}
+
+@keyframes collapseOverlayReverse {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
   }
 }
 
@@ -117,7 +131,6 @@
 
     .overlay-bar {
       position: relative;
-      bottom: 0;
       left: 0;
       top: 0;
       height: 100%;
@@ -126,14 +139,16 @@
       animation-name: none;
       animation-duration: 400ms;
       animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
+      animation-fill-mode: both;
+      transition-property: transform;
+      transition-duration: 200ms;
+      transition-timing-function: ease-in-out;
       transform: translateY(100%);
+      justify-self: flex-end;
     }
 
-    .flip {
-      transform: rotate(180deg);
-      transition-duration: 0ms;
-      animation-duration: 0ms;
+    .reverse {
+      transform: translateY(-100%);
     }
   }
 }

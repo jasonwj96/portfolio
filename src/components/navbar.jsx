@@ -25,7 +25,7 @@ const Navbar = () => {
       bars[2].style.animationName = "expandOverlay";
     } else {
       bars[0].style.animationName = "collapseOverlay";
-      bars[1].style.animationName = "collapseOverlay";
+      bars[1].style.animationName = "collapseOverlayReverse";
       bars[2].style.animationName = "collapseOverlay";
     }
   }, [toggleMenu]);
@@ -58,9 +58,9 @@ const Navbar = () => {
       </div>
       <div id="navbar-overlay">
         <div className="overlay-bar" />
-        <div className="overlay-bar flip" />
+        <div className="overlay-bar reverse" />
         <div className="overlay-bar" />
-        <div className="overlay-links">
+        {/* <div className="overlay-links">
           <ul className="overlay-linkset">
             <li>
               <Link className="link" to="/">
@@ -73,7 +73,7 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );
