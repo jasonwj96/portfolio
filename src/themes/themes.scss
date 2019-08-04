@@ -1,4 +1,4 @@
-$global-font: "Open Sans", sans-serif;
+$global-font: "Lato", sans-serif;
 
 @mixin button() {
   border: none;
@@ -108,7 +108,7 @@ $global-font: "Open Sans", sans-serif;
 
     #navbar-overlay {
       .overlay-bar {
-        background-color: #e7e7e7;
+        background-color: #000000;
       }
     }
   }
