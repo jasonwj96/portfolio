@@ -20,9 +20,16 @@ const Navbar = () => {
 
   return (
     <div id="navbar-container">
-      <button className="dark" onClick={toggleTheme}>
-        {darkTheme ? <i class="fas fa-moon" /> : <i class="fas fa-sun" />}
-      </button>
+      <div id="navbar-top">
+        <div id="brand">
+          <p>JW</p>
+        </div>
+        <button id="toggle-btn" onClick={toggleTheme}>
+          {darkTheme ? <i class="fas fa-moon" /> : <i class="fas fa-sun" />}
+        </button>
+      </div>
+
+      <p>Navbar works</p>
     </div>
   );
 };

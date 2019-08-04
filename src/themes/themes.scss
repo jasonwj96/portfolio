@@ -1,14 +1,65 @@
 $global-font: "Open Sans", sans-serif;
 
 @mixin dark-theme() {
+  $primary-dark: #000;
   //Global
-  background-color: #1a1a1a;
+  background-color: $primary-dark;
   color: #fff;
+
+  //navbar
+  #navbar-container {
+    color: #fff;
+
+    #navbar-top {
+      background-color: $primary-dark;
+      border-color: #ffffff7a;
+
+      #brand {
+        color: #fff;
+      }
+
+      #toggle-btn {
+        color: #fff;
+        background-color: $primary-dark;
+
+        &:hover {
+          color: #fff;
+          background-color: #ff0040;
+        }
+      }
+    }
+  }
 }
 
 @mixin light-theme() {
   //Global
   background-color: #fff;
+
+  //Global
+  color: #111;
+
+  //navbar
+  #navbar-container {
+    color: #111;
+
+    #navbar-top {
+      background-color: #fff;
+
+      #brand {
+        color: #111;
+      }
+
+      #toggle-btn {
+        color: #111;
+        background-color: #fff;
+
+        &:hover {
+          color: #fff;
+          background-color: #ff0040;
+        }
+      }
+    }
+  }
 }
 
 #dark {

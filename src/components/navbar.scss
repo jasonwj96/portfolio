@@ -1,9 +1,70 @@
-.navbar-container {
+@import "../themes/themes.scss";
+
+// @keyframes rotateIcon {
+//   to {
+//     transform: rotateY(180deg);
+//   }
+// }
+
+#navbar-container {
   display: flex;
   flex-flow: column;
-  position: absolute;
-  min-width: 100vw;
-  min-height: 100vh;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
   top: 0;
   left: 0;
+  background-color: transparent;
+
+  #navbar-top {
+    display: flex;
+    height: auto;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    transition-property: background-color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+    box-shadow: 1px 1px 10px 1px #11111115;
+    padding: 5px 20px;
+
+    #brand {
+      font-size: 1.2em;
+
+      p {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      p::after {
+        content: ".";
+        margin: 0;
+        padding: 0;
+
+        color: #ff0040;
+      }
+    }
+
+    #toggle-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background-color: #fff;
+      outline: none;
+      transition-property: background-color;
+      transition-duration: 200ms;
+      transition-timing-function: ease-in-out;
+
+      &:hover {
+        color: #fff;
+        background-color: #ff0040;
+      }
+
+      i {
+        font-size: 1.5em;
+      }
+    }
+  }
 }
