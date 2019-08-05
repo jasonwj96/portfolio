@@ -3,7 +3,7 @@ import "./navbar.scss";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [darkTheme, setDarkTheme] = useState(true);
+  const [darkTheme, setDarkTheme] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(true);
 
   useEffect(() => {
@@ -53,7 +53,8 @@ const Navbar = () => {
     <div id="navbar-container">
       <div id="navbar-top">
         <div id="brand">
-          <p>JW</p>
+          <p>Jason</p>
+          <p>Wedderburn</p>
           <div id="bar" />
         </div>
         <button id="toggle-btn" onClick={toggleTheme}>
