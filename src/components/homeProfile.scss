@@ -91,9 +91,9 @@
       position: absolute;
       z-index: 1;
       animation-name: animateImage;
-      animation-duration: 40000ms;
+      animation-duration: 80s;
       animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
+      animation-timing-function: ease;
       animation-direction: alternate;
       object-fit: fill;
       height: 500px;
