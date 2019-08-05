@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [darkTheme, setDarkTheme] = useState(true);
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(true);
 
   useEffect(() => {
     const parent = document.getElementById("navbar-container").parentElement;
@@ -18,20 +18,27 @@ const Navbar = () => {
 
   useEffect(() => {
     const bars = document.getElementsByClassName("overlay-bar");
+    const navbarInfo = document.getElementById("overlay-info");
 
-    if (toggleMenu) {
-      bars[0].style.animationName = "expandOverlay";
-      bars[0].style.animationDelay = "0s";
-      bars[1].style.animationName = "expandOverlay";
-      bars[2].style.animationName = "expandOverlay";
-      bars[2].style.animationDelay = "0.5s";
-    } else {
-      bars[0].style.animationName = "collapseOverlay";
-      bars[0].style.animationDelay = "0.5s";
-      bars[1].style.animationName = "collapseOverlayReverse";
-      bars[2].style.animationName = "collapseOverlay";
-      bars[2].style.animationDelay = "0s";
-    }
+    return () => {
+      if (toggleMenu) {
+        bars[0].style.animationName = "expandOverlay";
+        bars[0].style.animationDelay = "0s";
+        bars[1].style.animationName = "expandOverlay";
+        bars[2].style.animationName = "expandOverlay";
+        bars[2].style.animationDelay = "0.5s";
+        navbarInfo.style.animationName = "showText";
+        navbarInfo.style.animationDelay = "0.7s";
+      } else {
+        navbarInfo.style.animationName = "hideText";
+        navbarInfo.style.animationDelay = "0s";
+        bars[0].style.animationName = "collapseOverlay";
+        bars[0].style.animationDelay = "0.5s";
+        bars[1].style.animationName = "collapseOverlayReverse";
+        bars[2].style.animationName = "collapseOverlay";
+        bars[2].style.animationDelay = "0s";
+      }
+    };
   }, [toggleMenu]);
 
   const toggleTheme = () => {
@@ -58,9 +65,9 @@ const Navbar = () => {
         </button>
         <button id="menu-btn" onClick={expandMenu}>
           {toggleMenu ? (
-            <i className="fas fa-times" />
-          ) : (
             <i className="fas fa-bars" />
+          ) : (
+            <i className="fas fa-times" />
           )}
         </button>
       </div>

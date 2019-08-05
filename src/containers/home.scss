@@ -2,9 +2,25 @@
 
 .home-container {
   background-color: transparent;
+  width: 100%;
+  height: 100%;
 
-  p {
+  #btn {
+    @include button();
+    cursor: pointer;
+    position: relative;
     margin: 0;
+    height: 100px;
+    width: 100px;
     font-size: 2em;
+    margin: 10px;
+    color: #fff;
+    background-color: transparent;
+    background-color: #6200ee;
+    transition-property: color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+    padding: 5px;
+    border-radius: 50%;
   }
 }

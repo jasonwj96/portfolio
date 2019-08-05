@@ -6,11 +6,7 @@ const Home = () => {
     document.title = "Jason Wedderburn - Home";
   }, []);
 
-  return (
-    <div className="home-container">
-      <p>Home works</p>
-    </div>
-  );
+  return <p />;
 };
 
 export default Home;

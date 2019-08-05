@@ -26,6 +26,30 @@
   }
 }
 
+@keyframes hideText {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+
+@keyframes showText {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
 #navbar-container {
   display: flex;
   flex-flow: column;
@@ -134,10 +158,9 @@
       animation-name: none;
       animation-duration: 400ms;
       animation-timing-function: ease-in-out;
-      animation-fill-mode: both;
+      animation-fill-mode: forwards;
       transition-property: transform;
-      transition-duration: 200ms;
-      transition-timing-function: ease-in-out;
+      transition-duration: 0ms;
       transform: translateY(100%);
       justify-self: flex-end;
     }
@@ -157,6 +180,12 @@
       width: 100%;
       justify-content: space-around;
       padding: 0px 200px 0px 0px;
+      opacity: 0;
+      transform: translateX(-50px);
+      animation-fill-mode: forwards;
+      animation-name: none;
+      animation-duration: 400ms;
+      animation-timing-function: ease-in-out;
 
       #overlay-linkset {
         display: flex;
@@ -164,7 +193,7 @@
         width: auto;
         height: 100%;
         padding: 0px 15px;
-        margin: 10px 10px 10px 30px;
+        margin: 10px 10px 10px 0px;
         justify-content: center;
 
         ul {
