@@ -50,14 +50,6 @@
   }
 }
 
-@keyframes animateBrand {
-  from {
-  }
-
-  to {
-  }
-}
-
 @keyframes animateBrandbar {
   from {
     opacity: 0;
@@ -93,7 +85,8 @@
   flex-flow: column;
   position: fixed;
   min-width: 100%;
-  min-height: 100%;
+  height: auto;
+  z-index: 10;
   top: 0;
   left: 0;
   background-color: transparent;
@@ -117,15 +110,16 @@
       pointer-events: none;
       display: flex;
       height: 50px;
-      width: fit-content;
+      width: 80px;
       align-items: center;
-      margin: 0 auto 0 30px;
+      align-self: center;
+      justify-self: center;
       position: relative;
       overflow: hidden;
 
       p:nth-child(1) {
         color: #ff0040;
-        z-index: 2;
+        z-index: inherit;
       }
 
       p {
@@ -139,23 +133,23 @@
         animation-name: animateBrandText;
         animation-fill-mode: forwards;
         animation-duration: 300ms;
-        animation-delay: 1000ms;
+        animation-delay: 2000ms;
         opacity: 0;
       }
 
-      #bar {
-        width: 5px;
-        height: 40px;
-        margin: 0px 0 0 25px;
-        border-radius: 10px;
-        background-color: #ff0040;
-        animation-name: animateBrandbar;
-        animation-direction: alternate;
-        opacity: 0;
-        animation-fill-mode: forwards;
-        animation-duration: 300ms;
-        animation-delay: 1500ms;
-      }
+      // #bar {
+      //   width: 5px;
+      //   height: 40px;
+      //   margin: 0px 0 0 25px;
+      //   border-radius: 10px;
+      //   background-color: #ff0040;
+      //   animation-name: animateBrandbar;
+      //   animation-direction: alternate;
+      //   opacity: 0;
+      //   animation-fill-mode: forwards;
+      //   animation-duration: 300ms;
+      //   animation-delay: 1500ms;
+      // }
     }
 
     #toggle-btn {
@@ -166,6 +160,8 @@
       transition-property: background-color;
       transition-duration: 200ms;
       transition-timing-function: ease-in-out;
+      justify-self: flex-end;
+      margin: 0 10px 0 auto;
 
       i {
         position: fixed;

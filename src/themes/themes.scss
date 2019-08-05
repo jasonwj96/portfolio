@@ -4,14 +4,14 @@ $global-font: "Lato", sans-serif;
   &::before {
     content: "";
     background-color: #ff0040;
-    width: 100%;
+    width: inherit;
     height: 100%;
-    // border-radius: 10px;
     z-index: 2;
     position: absolute;
     transition-property: transform;
     animation-name: animateBrandOverlay;
     animation-duration: 1800ms;
+    animation-delay: 1000ms;
     animation-timing-function: cubic-bezier(1, 0.5, 0.5, 1);
     transform: translateX(-101%);
   }

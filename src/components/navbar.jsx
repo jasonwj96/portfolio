@@ -7,6 +7,11 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(true);
 
   useEffect(() => {
+    const overlay = document.getElementById("navbar-overlay");
+    overlay.style.display = "none";
+  }, []);
+
+  useEffect(() => {
     const parent = document.getElementById("navbar-container").parentElement;
 
     if (darkTheme) {
@@ -19,9 +24,13 @@ const Navbar = () => {
   useEffect(() => {
     const bars = document.getElementsByClassName("overlay-bar");
     const navbarInfo = document.getElementById("overlay-info");
+    const overlay = document.getElementById("navbar-overlay");
+    const navbarContainer = document.getElementById("navbar-container");
 
     return () => {
       if (toggleMenu) {
+        overlay.style.display = "flex";
+        navbarContainer.style.height = "100%";
         bars[0].style.animationName = "expandOverlay";
         bars[0].style.animationDelay = "0s";
         bars[1].style.animationName = "expandOverlay";
@@ -30,6 +39,7 @@ const Navbar = () => {
         navbarInfo.style.animationName = "showText";
         navbarInfo.style.animationDelay = "0.7s";
       } else {
+        navbarContainer.style.height = "auto";
         navbarInfo.style.animationName = "hideText";
         navbarInfo.style.animationDelay = "0s";
         bars[0].style.animationName = "collapseOverlay";
@@ -37,6 +47,7 @@ const Navbar = () => {
         bars[1].style.animationName = "collapseOverlayReverse";
         bars[2].style.animationName = "collapseOverlay";
         bars[2].style.animationDelay = "0s";
+        overlay.style.display = "none";
       }
     };
   }, [toggleMenu]);
@@ -55,7 +66,7 @@ const Navbar = () => {
         <div id="brand">
           <p>J</p>
           <p>W</p>
-          <div id="bar" />
+          {/* <div id="bar" /> */}
         </div>
         <button id="toggle-btn" onClick={toggleTheme}>
           {darkTheme ? (
@@ -86,7 +97,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link className="link" to="/">
-                  About me
+                  My timeline
                 </Link>
               </li>
               <li>
