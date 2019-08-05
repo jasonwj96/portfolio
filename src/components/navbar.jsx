@@ -53,8 +53,8 @@ const Navbar = () => {
     <div id="navbar-container">
       <div id="navbar-top">
         <div id="brand">
-          <p>Jason</p>
-          <p>Wedderburn</p>
+          <p>J</p>
+          <p>W</p>
           <div id="bar" />
         </div>
         <button id="toggle-btn" onClick={toggleTheme}>

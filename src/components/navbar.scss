@@ -112,20 +112,29 @@
     padding: 5px 20px;
 
     #brand {
+      @include textLoader();
       font-size: 1em;
       pointer-events: none;
       display: flex;
-      height: fit-content;
+      height: 50px;
       width: fit-content;
-      align-items: flex-start;
+      align-items: center;
       margin: 0 auto 0 30px;
       position: relative;
       overflow: hidden;
 
+      p:nth-child(1) {
+        color: #ff0040;
+        z-index: 2;
+      }
+
       p {
+        // font-family: "Pacifico", cursive;
+        font-style: italic;
         font-size: 2em;
         font-weight: bold;
         position: relative;
+        letter-spacing: -20px;
         margin: 0px 5px;
         animation-name: animateBrandText;
         animation-fill-mode: forwards;
@@ -136,8 +145,8 @@
 
       #bar {
         width: 5px;
-        margin: 0px 0 0 5px;
         height: 40px;
+        margin: 0px 0 0 25px;
         border-radius: 10px;
         background-color: #ff0040;
         animation-name: animateBrandbar;
@@ -146,21 +155,6 @@
         animation-fill-mode: forwards;
         animation-duration: 300ms;
         animation-delay: 1500ms;
-      }
-
-      &::before {
-        content: "";
-        background-color: #ff0040;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        z-index: 2;
-        position: absolute;
-        transition-property: transform;
-        animation-name: animateBrandOverlay;
-        animation-duration: 1800ms;
-        animation-timing-function: cubic-bezier(1, 0.5, 0.5, 1);
-        transform: translateX(-101%);
       }
     }
 
