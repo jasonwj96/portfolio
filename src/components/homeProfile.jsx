@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./homeProfile.scss";
 import profilebg from "../img/profilebg.jpg";
 
@@ -12,7 +12,7 @@ const HomeProfile = () => {
         <p>My name is Jason Alejandro Wedderburn Johnson, I'm 22 years old</p>
       </div>
       <div id="profile-img">
-        <img src={profilebg} alt="Profile image" />
+        <img src={profilebg} alt="Profile" />
       </div>
     </div>
   );

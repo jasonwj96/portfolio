@@ -7,11 +7,6 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(true);
 
   useEffect(() => {
-    const overlay = document.getElementById("navbar-overlay");
-    overlay.style.display = "none";
-  }, []);
-
-  useEffect(() => {
     const parent = document.getElementById("navbar-container").parentElement;
 
     if (darkTheme) {
@@ -32,22 +27,18 @@ const Navbar = () => {
         overlay.style.display = "flex";
         navbarContainer.style.height = "100%";
         bars[0].style.animationName = "expandOverlay";
-        bars[0].style.animationDelay = "0s";
         bars[1].style.animationName = "expandOverlay";
         bars[2].style.animationName = "expandOverlay";
-        bars[2].style.animationDelay = "0.5s";
         navbarInfo.style.animationName = "showText";
-        navbarInfo.style.animationDelay = "0.7s";
       } else {
-        navbarContainer.style.height = "auto";
         navbarInfo.style.animationName = "hideText";
-        navbarInfo.style.animationDelay = "0s";
         bars[0].style.animationName = "collapseOverlay";
-        bars[0].style.animationDelay = "0.5s";
         bars[1].style.animationName = "collapseOverlayReverse";
         bars[2].style.animationName = "collapseOverlay";
-        bars[2].style.animationDelay = "0s";
-        overlay.style.display = "none";
+
+        setTimeout(() => {
+          navbarContainer.style.height = "auto";
+        }, 350);
       }
     };
   }, [toggleMenu]);

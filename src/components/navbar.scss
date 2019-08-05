@@ -50,6 +50,16 @@
   }
 }
 
+@keyframes showBrandText {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes animateBrandbar {
   from {
     opacity: 0;
@@ -67,16 +77,6 @@
 
   to {
     transform: translateX(100%);
-  }
-}
-
-@keyframes animateBrandText {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 }
 
@@ -130,10 +130,11 @@
         position: relative;
         letter-spacing: -10px;
         margin: 0px 5px;
-        animation-name: animateBrandText;
+        opacity: 0;
+        animation-name: showBrandText;
         animation-fill-mode: forwards;
-        animation-duration: 300ms;
-        animation-delay: 2000ms;
+        animation-duration: 250ms;
+        animation-delay: 1200ms;
         opacity: 0;
       }
 
@@ -199,10 +200,6 @@
     margin: 70px 0 0 0;
     overflow: hidden;
 
-    .overlay-bar:nth-child(2) {
-      animation-delay: 300ms;
-    }
-
     .overlay-bar {
       position: relative;
       left: 0;
@@ -210,14 +207,14 @@
       height: 100%;
       flex-grow: 1;
       width: 0;
+      display: flex;
       animation-name: none;
       animation-duration: 400ms;
       animation-timing-function: ease-in-out;
       animation-fill-mode: forwards;
       transition-property: transform;
-      transition-duration: 0ms;
+      transition-duration: 200ms;
       transform: translateY(100%);
-      justify-self: flex-end;
     }
 
     .reverse {
@@ -239,7 +236,7 @@
       transform: translateX(-50px);
       animation-fill-mode: forwards;
       animation-name: none;
-      animation-duration: 400ms;
+      animation-duration: 300ms;
       animation-timing-function: ease-in-out;
 
       #overlay-linkset {
