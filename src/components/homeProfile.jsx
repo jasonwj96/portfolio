@@ -18,7 +18,7 @@ const HomeProfile = () => {
       <div id="profile-img">
         <img src={profilebg} alt="Profile" />
         <div id="profile-img-overlay">
-          <i class="fas fa-map-marker-alt" />
+          <i className="fas fa-map-marker-alt" />
           <p>Panama City, Panama</p>
         </div>
       </div>

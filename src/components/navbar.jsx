@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./navbar.scss";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Navbar = () => {
   const [darkTheme, setDarkTheme] = useState(false);
@@ -80,15 +80,15 @@ const Navbar = () => {
         <div className="overlay-bar" />
         <div id="overlay-info">
           <div id="overlay-linkset">
-            <ul>
+            <ul onClick={expandMenu}>
               <li>
-                <Link className="link" to="/">
+                <Link className="link" to="/#homeProfile-container">
                   Home
                 </Link>
               </li>
               <li>
-                <Link className="link" to="/">
-                  My timeline
+                <Link className="link" to="/#education">
+                  Education
                 </Link>
               </li>
               <li>

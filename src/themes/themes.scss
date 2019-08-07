@@ -91,7 +91,6 @@ $global-font: "Lato", sans-serif;
 
 @mixin dark-theme() {
   $primary-dark: #0e0e0e;
-
   background-color: $primary-dark;
   color: #fff;
 
@@ -122,6 +121,33 @@ $global-font: "Lato", sans-serif;
     #navbar-overlay {
       .overlay-bar {
         background-color: #000;
+      }
+    }
+  }
+
+  .timeline-container {
+    .timeline-item {
+      .line-wrapper {
+        .bullet {
+        }
+
+        .line {
+        }
+      }
+
+      .timeline-info {
+        .period {
+          color: #000;
+          background-color: #ffffff;
+        }
+
+        .title {
+          color: #fff;
+        }
+
+        .desc {
+          color: #fff;
+        }
       }
     }
   }
@@ -175,6 +201,33 @@ $global-font: "Lato", sans-serif;
           p {
             color: #000;
           }
+        }
+      }
+    }
+  }
+
+  .timeline-container {
+    .timeline-item {
+      .line-wrapper {
+        .bullet {
+        }
+
+        .line {
+        }
+      }
+
+      .timeline-info {
+        .period {
+          color: #fff;
+          background-color: #000000;
+        }
+
+        .title {
+          color: #000;
+        }
+
+        .desc {
+          color: #000;
         }
       }
     }
