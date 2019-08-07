@@ -57,7 +57,6 @@ const Navbar = () => {
         <div id="brand">
           <p>J</p>
           <p>W</p>
-          {/* <div id="bar" /> */}
         </div>
         <button id="toggle-btn" onClick={toggleTheme}>
           {darkTheme ? (
