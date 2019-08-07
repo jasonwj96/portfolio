@@ -1,4 +1,5 @@
 $global-font: "Lato", sans-serif;
+$accent: #ff0040;
 
 @keyframes showText {
   from {
@@ -28,11 +29,10 @@ $global-font: "Lato", sans-serif;
   animation-duration: 0ms;
   animation-delay: 1300ms;
   position: relative;
-  color: transparent;
 
   &::before {
     content: "";
-    background-color: #ff0040;
+    background-color: $accent;
     width: inherit;
     height: inherit;
     z-index: 1;
@@ -61,7 +61,7 @@ $global-font: "Lato", sans-serif;
     z-index: inherit;
     content: "";
     position: absolute;
-    background-color: #ff0040;
+    background-color: $accent;
     width: inherit;
     height: inherit;
     margin: auto;
@@ -165,7 +165,6 @@ $global-font: "Lato", sans-serif;
       background-color: #fff;
 
       #brand {
-        color: #111;
       }
 
       #toggle-btn {
@@ -190,7 +189,7 @@ $global-font: "Lato", sans-serif;
                 color: #000;
 
                 &:hover {
-                  color: #ff0040;
+                  color: $accent;
                 }
               }
             }

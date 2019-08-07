@@ -53,7 +53,7 @@
     height: auto;
 
     h1 {
-      @include textLoader();
+      // @include textLoader();
       font-family: "Roboto", sans-serif;
       font-weight: bold;
       font-size: 3em;
@@ -64,7 +64,7 @@
     }
 
     h3 {
-      @include textLoader();
+      // @include textLoader();
       font-family: "Roboto", sans-serif;
       font-size: 1.5em;
       margin: 0 0 50px 0;
@@ -75,7 +75,7 @@
     }
 
     p {
-      @include textLoader();
+      // @include textLoader();
       overflow: hidden;
       font-family: "Roboto", sans-serif;
       width: fit-content;

@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./timeline.scss";
 
 const Timeline = () => {
-  const [year, setYear] = useState(new Date().getFullYear());
+  // const [year, setYear] = useState(new Date().getFullYear());
 
-  useEffect(() => {
-    return () => {
-      setYear(new Date().getFullYear());
-    };
-  }, [year]);
+  // useEffect(() => {
+  //   return () => {
+  //     setYear(new Date().getFullYear());
+  //   };
+  // }, [year]);
 
   const events = [
     {
@@ -28,11 +28,6 @@ const Timeline = () => {
     }
   ];
 
-  const reverseItem = index => {
-    if (index % 2 === 1) return "timeline-item reverse";
-    else return "timeline-item";
-  };
-
   return (
     <div id="education" className="timeline-container">
       <div id="heading">
@@ -42,7 +37,7 @@ const Timeline = () => {
         return (
           <div key={index} className="timeline-item-wrapper">
             <div className="item-space" />
-            <div className={reverseItem(index)}>
+            <div className="timeline-item">
               <div className="line-wrapper">
                 <div className="bullet" />
                 <div className="line" />
@@ -56,9 +51,7 @@ const Timeline = () => {
           </div>
         );
       })}
-      <div className="today">
-        <p>{year}</p>
-      </div>
+      <div className="today">{/* <p>{year}</p> */}</div>
     </div>
   );
 };

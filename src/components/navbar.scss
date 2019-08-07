@@ -105,7 +105,7 @@
     padding: 5px 20px;
 
     #brand {
-      @include textLoader();
+      // @include textLoader();
       font-size: 1em;
       pointer-events: none;
       display: flex;
@@ -137,20 +137,6 @@
         animation-delay: 1200ms;
         opacity: 0;
       }
-
-      // #bar {
-      //   width: 5px;
-      //   height: 40px;
-      //   margin: 0px 0 0 25px;
-      //   border-radius: 10px;
-      //   background-color: #ff0040;
-      //   animation-name: animateBrandbar;
-      //   animation-direction: alternate;
-      //   opacity: 0;
-      //   animation-fill-mode: forwards;
-      //   animation-duration: 300ms;
-      //   animation-delay: 1500ms;
-      // }
     }
 
     #toggle-btn {
