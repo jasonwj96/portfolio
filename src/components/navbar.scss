@@ -184,6 +184,12 @@
     }
   }
 
+  #scroll-progress {
+    width: 100%;
+    height: 5px;
+    background-color: $accent;
+  }
+
   #navbar-overlay {
     position: absolute;
     top: 0;
@@ -308,8 +314,35 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
   #navbar-container {
-    width: 100vw;
+    #navbar-overlay {
+      .overlay-bar:nth-child(1),
+      .overlay-bar:nth-child(3) {
+        display: none;
+      }
+
+      #overlay-info {
+        justify-content: flex-start;
+        flex-flow: column;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        #overlay-linkset {
+          width: 100%;
+          height: fit-content;
+          margin: 0;
+          padding: 20px 10px 10px 30px;
+        }
+
+        #overlay-contact {
+          width: 100%;
+          height: fit-content;
+          margin: 0;
+          padding: 20px 20px 10px 30px;
+        }
+      }
+    }
   }
 }

@@ -78,6 +78,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+      <div id="scroll-progress" />
       <div id="navbar-overlay">
         <div className="overlay-bar" />
         <div className="overlay-bar reverse" />
