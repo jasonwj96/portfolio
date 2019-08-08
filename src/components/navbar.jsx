@@ -3,8 +3,8 @@ import "./navbar.scss";
 import { HashLink as Link } from "react-router-hash-link";
 
 const Navbar = () => {
-  const [darkTheme, setDarkTheme] = useState(false);
-  const [toggleMenu, setToggleMenu] = useState(true);
+  const [darkTheme, setDarkTheme] = useState(true);
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   useEffect(() => {
     const parent = document.getElementById("navbar-container").parentElement;
@@ -23,7 +23,7 @@ const Navbar = () => {
     const navbarContainer = document.getElementById("navbar-container");
 
     return () => {
-      if (toggleMenu) {
+      if (!toggleMenu) {
         overlay.style.display = "flex";
         navbarContainer.style.height = "100%";
         bars[0].style.animationName = "expandOverlay";
@@ -58,20 +58,22 @@ const Navbar = () => {
           <p>J</p>
           <p>W</p>
         </div>
-        <button id="toggle-btn" onClick={toggleTheme}>
-          {darkTheme ? (
-            <i className="fas fa-sun" />
-          ) : (
-            <i className="fas fa-moon" />
-          )}
-        </button>
-        <button id="menu-btn" onClick={expandMenu}>
-          {toggleMenu ? (
-            <i className="fas fa-bars" />
-          ) : (
-            <i className="fas fa-times" />
-          )}
-        </button>
+        <div id="buttons-wrapper">
+          <button id="toggle-btn" onClick={toggleTheme}>
+            {darkTheme ? (
+              <i className="fas fa-sun" />
+            ) : (
+              <i className="fas fa-moon" />
+            )}
+          </button>
+          <button id="menu-btn" onClick={expandMenu}>
+            {!toggleMenu ? (
+              <i className="fas fa-bars" />
+            ) : (
+              <i className="fas fa-times" />
+            )}
+          </button>
+        </div>
       </div>
       <div id="navbar-overlay">
         <div className="overlay-bar" />

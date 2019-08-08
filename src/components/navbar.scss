@@ -84,9 +84,9 @@
   display: flex;
   flex-flow: column;
   position: fixed;
-  min-width: 100%;
+  width: 100%;
   height: auto;
-  z-index: 10;
+  z-index: 5;
   top: 0;
   left: 0;
   background-color: transparent;
@@ -94,7 +94,7 @@
   #navbar-top {
     display: flex;
     height: auto;
-    width: 100%;
+    width: auto;
     position: relative;
     justify-content: space-between;
     align-items: center;
@@ -139,38 +139,45 @@
       }
     }
 
-    #toggle-btn {
-      @include button();
-      width: 40px;
-      height: 40px;
-      border-radius: 20px;
-      transition-property: background-color;
-      transition-duration: 200ms;
-      transition-timing-function: ease-in-out;
-      justify-self: flex-end;
-      margin: 0 10px 0 auto;
+    #buttons-wrapper {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      height: 100%;
 
-      i {
-        position: fixed;
-        font-size: 1.5em;
+      #toggle-btn {
+        @include button();
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        transition-property: background-color;
+        transition-duration: 200ms;
+        transition-timing-function: ease-in-out;
+        justify-self: flex-end;
+        margin: 0 10px 0 auto;
+
+        i {
+          position: fixed;
+          font-size: 1.5em;
+        }
       }
-    }
 
-    #menu-btn {
-      @include button();
-      cursor: pointer;
-      margin: 10px;
-      width: 40px;
-      height: 40px;
-      background-color: transparent;
-      transition-property: color;
-      transition-duration: 200ms;
-      transition-timing-function: ease-in-out;
-      padding: 5px;
-      border-radius: 50%;
+      #menu-btn {
+        @include button();
+        cursor: pointer;
+        margin: 10px;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        transition-property: color;
+        transition-duration: 200ms;
+        transition-timing-function: ease-in-out;
+        padding: 5px;
+        border-radius: 50%;
 
-      i {
-        font-size: 1.5em;
+        i {
+          font-size: 1.5em;
+        }
       }
     }
   }
@@ -296,5 +303,11 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  #navbar-container {
+    width: 100vw;
   }
 }

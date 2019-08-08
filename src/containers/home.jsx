@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./home.scss";
 import HomeProfile from "../components/homeProfile";
-import Timeline from "../components/timeline";
+// import Timeline from "../components/timeline";
 
 const Home = () => {
   useEffect(() => {
@@ -9,10 +9,10 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <div className="home-container">
       <HomeProfile />
-      <Timeline />
-    </>
+      {/* <Timeline /> */}
+    </div>
   );
 };
 
