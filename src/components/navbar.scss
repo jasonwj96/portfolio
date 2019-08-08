@@ -118,7 +118,7 @@
       overflow: hidden;
 
       p:nth-child(1) {
-        color: #ff0040;
+        color: $accent;
         z-index: inherit;
       }
 
@@ -245,7 +245,7 @@
           border-left: 10px solid;
           text-decoration: none;
           list-style-type: none;
-          border-color: #ff0040;
+          border-color: $accent;
           padding: 0 0 0 10px;
 
           li {
@@ -265,7 +265,7 @@
               transition-timing-function: ease-in-out;
 
               &:hover {
-                color: #ff0040;
+                color: $accent;
               }
             }
           }
@@ -296,7 +296,7 @@
 
         p:nth-child(1) {
           border-left: 5px solid;
-          border-color: #ff0040;
+          border-color: $accent;
           padding-left: 10px;
           letter-spacing: -1px;
           font-size: 1.3em;

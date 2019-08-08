@@ -36,7 +36,6 @@ const Timeline = () => {
       {events.map((element, index) => {
         return (
           <div key={index} className="timeline-item-wrapper">
-            <div className="item-space" />
             <div className="timeline-item">
               <div className="line-wrapper">
                 <div className="bullet" />
@@ -51,7 +50,7 @@ const Timeline = () => {
           </div>
         );
       })}
-      <div className="today">{/* <p>{year}</p> */}</div>
+      <div className="lastNode" />
     </div>
   );
 };
