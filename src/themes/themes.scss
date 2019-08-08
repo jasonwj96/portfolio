@@ -54,8 +54,20 @@ $accent: #ff0040;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translate3d(0, 0, 10px);
-  z-index: inherit;
+  background-color: transparent;
+
+  i {
+    position: fixed;
+    font-size: 1.5em;
+  }
+
+  &:hover {
+    color: #fff;
+
+    &::before {
+      transform: translateX(0px);
+    }
+  }
 
   &::before {
     z-index: inherit;
@@ -73,19 +85,6 @@ $accent: #ff0040;
     transition-property: transform;
     transition-duration: 400ms;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-
-  &:hover {
-    &::before {
-      transform: translateX(0px);
-    }
-
-    i {
-      color: #fff;
-      top: 0;
-      left: 0;
-      position: relative;
-    }
   }
 }
 
@@ -106,8 +105,16 @@ $accent: #ff0040;
       }
 
       #buttons-wrapper {
+        #language-btn {
+          i {
+            color: #fff;
+          }
+        }
+
         #toggle-btn {
-          color: #fff;
+          i {
+            color: #fff;
+          }
         }
 
         #menu-btn {
@@ -155,12 +162,9 @@ $accent: #ff0040;
 
 @mixin light-theme() {
   background-color: #fff;
-
   color: #111;
 
   #navbar-container {
-    color: #111;
-
     #navbar-top {
       background-color: #fff;
 
@@ -169,8 +173,40 @@ $accent: #ff0040;
       }
 
       #buttons-wrapper {
+        #language-btn {
+          &:hover {
+            i {
+              color: #fff;
+            }
+          }
+
+          i {
+            color: #000;
+          }
+        }
+
         #toggle-btn {
-          color: #111;
+          &:hover {
+            i {
+              color: #fff;
+            }
+          }
+
+          i {
+            color: #000;
+          }
+        }
+
+        #menu-btn {
+          &:hover {
+            i {
+              color: #fff;
+            }
+          }
+
+          i {
+            color: #000;
+          }
         }
       }
     }

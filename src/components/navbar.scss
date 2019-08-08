@@ -86,7 +86,7 @@
   position: fixed;
   width: 100%;
   height: auto;
-  z-index: 5;
+  z-index: 1;
   top: 0;
   left: 0;
   background-color: transparent;
@@ -105,7 +105,6 @@
     padding: 5px 20px;
 
     #brand {
-      // @include textLoader();
       font-size: 1em;
       pointer-events: none;
       display: flex;
@@ -119,7 +118,6 @@
 
       p:nth-child(1) {
         color: $accent;
-        z-index: inherit;
       }
 
       p {
@@ -144,25 +142,31 @@
       align-items: center;
       width: fit-content;
       height: 100%;
-      background-color: transparent;
 
-      #toggle-btn {
+      #language-btn {
         @include button();
+        cursor: pointer;
+        margin: 10px;
         width: 40px;
         height: 40px;
-        border-radius: 20px;
         transition-property: background-color;
         transition-duration: 200ms;
         transition-timing-function: ease-in-out;
-        justify-self: flex-end;
-        margin: 0 10px 0 auto;
-        background-color: transparent;
+        padding: 5px;
+        border-radius: 50%;
+      }
 
-        i {
-          position: fixed;
-          font-size: 1.5em;
-          background-color: transparent;
-        }
+      #toggle-btn {
+        @include button();
+        cursor: pointer;
+        margin: 10px;
+        width: 40px;
+        height: 40px;
+        transition-property: background-color;
+        transition-duration: 200ms;
+        transition-timing-function: ease-in-out;
+        padding: 5px;
+        border-radius: 50%;
       }
 
       #menu-btn {
@@ -171,16 +175,11 @@
         margin: 10px;
         width: 40px;
         height: 40px;
-        background-color: transparent;
-        transition-property: color;
+        transition-property: background-color;
         transition-duration: 200ms;
         transition-timing-function: ease-in-out;
         padding: 5px;
         border-radius: 50%;
-
-        i {
-          font-size: 1.5em;
-        }
       }
     }
   }

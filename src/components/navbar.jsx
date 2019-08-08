@@ -4,7 +4,7 @@ import { HashLink as Link } from "react-router-hash-link";
 
 const Navbar = () => {
   const [darkTheme, setDarkTheme] = useState(true);
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(true);
 
   useEffect(() => {
     const parent = document.getElementById("navbar-container").parentElement;
@@ -23,7 +23,7 @@ const Navbar = () => {
     const navbarContainer = document.getElementById("navbar-container");
 
     return () => {
-      if (!toggleMenu) {
+      if (toggleMenu) {
         overlay.style.display = "flex";
         navbarContainer.style.height = "100%";
         bars[0].style.animationName = "expandOverlay";
@@ -59,6 +59,9 @@ const Navbar = () => {
           <p>W</p>
         </div>
         <div id="buttons-wrapper">
+          <button id="language-btn">
+            <i className="fas fa-globe-americas" />
+          </button>
           <button id="toggle-btn" onClick={toggleTheme}>
             {darkTheme ? (
               <i className="fas fa-sun" />
@@ -67,7 +70,7 @@ const Navbar = () => {
             )}
           </button>
           <button id="menu-btn" onClick={expandMenu}>
-            {!toggleMenu ? (
+            {toggleMenu ? (
               <i className="fas fa-bars" />
             ) : (
               <i className="fas fa-times" />
