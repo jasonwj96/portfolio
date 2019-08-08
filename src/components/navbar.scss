@@ -144,6 +144,7 @@
       align-items: center;
       width: fit-content;
       height: 100%;
+      background-color: transparent;
 
       #toggle-btn {
         @include button();
@@ -155,10 +156,12 @@
         transition-timing-function: ease-in-out;
         justify-self: flex-end;
         margin: 0 10px 0 auto;
+        background-color: transparent;
 
         i {
           position: fixed;
           font-size: 1.5em;
+          background-color: transparent;
         }
       }
 

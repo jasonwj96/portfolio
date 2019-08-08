@@ -105,15 +105,15 @@ $accent: #ff0040;
         color: #fff;
       }
 
-      #toggle-btn {
-        color: #fff;
-        background-color: #fff;
-        background-color: $primary-dark;
-      }
-
-      #menu-btn {
-        i {
+      #buttons-wrapper {
+        #toggle-btn {
           color: #fff;
+        }
+
+        #menu-btn {
+          i {
+            color: #fff;
+          }
         }
       }
     }
@@ -165,11 +165,13 @@ $accent: #ff0040;
       background-color: #fff;
 
       #brand {
+        color: #000;
       }
 
-      #toggle-btn {
-        color: #111;
-        background-color: #fff;
+      #buttons-wrapper {
+        #toggle-btn {
+          color: #111;
+        }
       }
     }
 
