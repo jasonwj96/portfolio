@@ -5,6 +5,7 @@ import { HashLink as Link } from "react-router-hash-link";
 const Navbar = () => {
   const [darkTheme, setDarkTheme] = useState(true);
   const [toggleMenu, setToggleMenu] = useState(true);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     const parent = document.getElementById("navbar-container").parentElement;
@@ -78,7 +79,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-      <div id="scroll-progress" />
+
       <div id="navbar-overlay">
         <div className="overlay-bar" />
         <div className="overlay-bar reverse" />
