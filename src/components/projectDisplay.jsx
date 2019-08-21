@@ -1,8 +1,8 @@
 import React from "react";
 import "./projectDisplay.scss";
 import ngSight from "../img/ngsight.png";
-import utpRedes from "../img/matshop.png";
-import matShop from "../img/utpredes.png";
+import matShop from "../img/matshop.png";
+import utpRedes from "../img/utpredes.png";
 
 const ProjectDisplay = () => {
   const projects = [
