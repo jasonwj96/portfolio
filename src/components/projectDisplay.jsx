@@ -1,6 +1,5 @@
 import React from "react";
 import "./projectDisplay.scss";
-import { Link } from "react-router-dom";
 
 const ProjectDisplay = () => {
   const projects = [
@@ -10,25 +9,25 @@ const ProjectDisplay = () => {
         <i className="fab fa-react" />,
         <i className="fab fa-sass" />
       ],
-      projectUrl: ""
+      projectUrl: "https://github.com/jasonwj96/UtpRedes"
     },
     {
       projectName: "Matshop",
       techStack: [
         <i className="fab fa-react" />,
         <i className="fab fa-sass" />,
-        <i class="fab fa-microsoft" />
+        <i className="fab fa-microsoft" />
       ],
-      projectUrl: ""
+      projectUrl: "https://github.com/jasonwj96/matshop"
     },
     {
       projectName: "ngSight",
       techStack: [
-        <i class="fab fa-angular" />,
-        <i class="fab fa-js" />,
-        <i class="fab fa-microsoft" />
+        <i className="fab fa-angular" />,
+        <i className="fab fa-js" />,
+        <i className="fab fa-microsoft" />
       ],
-      projectUrl: ""
+      projectUrl: "https://github.com/jasonwj96/ngSight"
     }
   ];
 
@@ -46,9 +45,9 @@ const ProjectDisplay = () => {
               </div>
               <div className="project-info">
                 <p>{project.projectName}</p>
-                <Link to="/" className="arrow link">
+                <a href={project.projectUrl} className="arrow">
                   <i className="fas fa-arrow-right" />
-                </Link>
+                </a>
               </div>
             </div>
           );

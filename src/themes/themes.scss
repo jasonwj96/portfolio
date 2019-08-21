@@ -158,6 +158,36 @@ $accent: #ff0040;
       }
     }
   }
+
+  #projectDisplay-container {
+    .projects {
+      .project {
+        background-color: #000;
+
+        .project-info {
+          background-color: #0c0c0c;
+
+          .arrow {
+            background-color: #0c0c0c;
+
+            &:hover {
+              i {
+                color: #fff;
+              }
+            }
+
+            i {
+              color: #fff;
+            }
+          }
+
+          p {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
 }
 
 @mixin light-theme() {
@@ -265,6 +295,36 @@ $accent: #ff0040;
 
         .desc {
           color: #000;
+        }
+      }
+    }
+  }
+
+  #projectDisplay-container {
+    .projects {
+      .project {
+        background-color: #f1f1f1;
+
+        .project-info {
+          background-color: #ffffff;
+
+          .arrow {
+            background-color: #ffffff;
+
+            &:hover {
+              i {
+                color: #fff;
+              }
+            }
+
+            i {
+              color: #000000;
+            }
+          }
+
+          p {
+            color: #000;
+          }
         }
       }
     }
