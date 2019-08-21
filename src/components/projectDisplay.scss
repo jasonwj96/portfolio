@@ -2,36 +2,124 @@
 
 #projectDisplay-container {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
   width: 100%;
   height: auto;
+  padding: 10px;
+  margin: 10px auto;
+  flex-flow: column;
 
-  .project {
-    width: 500px;
-    height: 300px;
-    border: #fff 1px solid;
+  .title {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .projects {
     display: flex;
-    flex-flow: column;
-    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
 
-    .tech-stack {
+    .project {
+      width: 100%;
+      max-width: 450px;
+      height: 350px;
       display: flex;
-      justify-content: space-evenly;
+      flex-flow: column;
+      justify-content: space-between;
+      box-shadow: 1px 1px 2px 2px #00000033;
+      margin: 5px;
+      // border-radius: 10px;
+      overflow: hidden;
+      // background-color: #f8f5f5;
 
-      i {
-        color: #000;
-        font-size: 5em;
-        margin: 10px;
+      &:hover {
+        .project-info {
+          transform: translateY(0%);
+        }
       }
 
-      .fa-react {
+      .tech-stack {
+        padding: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        height: 100%;
+
+        i {
+          color: #000;
+          font-size: 3em;
+          margin: 10px;
+          transition-property: filter;
+          transition-duration: 200ms;
+          transition-timing-function: ease-in-out;
+          padding: 10px;
+        }
+
+        .fa-react {
+          color: #00aeff;
+        }
+
+        .fa-sass {
+          color: #ff0077;
+        }
+
+        .fa-microsoft {
+          color: #0077ff;
+        }
+
+        .fa-angular {
+          color: #e60000;
+        }
+
+        .fa-js {
+          color: #facc00;
+        }
       }
 
-      .fa-sass {
-      }
-    }
+      .project-info {
+        height: 80px;
+        display: flex;
+        width: 100%;
+        background-color: #fff;
+        transition-property: transform;
+        transition-duration: 200ms;
+        transition-timing-function: ease-in-out;
+        justify-content: space-between;
+        position: relative;
+        transform: translateY(100%);
+        align-items: center;
 
-    .project-info {
+        p {
+          color: #000;
+          font-weight: bold;
+          font-family: "Varela Round", sans-serif;
+          font-size: 1.5em;
+          padding: 0 30px;
+          margin: 0;
+        }
+
+        .arrow {
+          @include button();
+          width: 100px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #fff;
+          color: #000;
+
+          &:hover {
+            color: #fff;
+          }
+
+          i {
+            font-size: 1.5em;
+            color: inherit;
+          }
+        }
+      }
     }
   }
 }

@@ -97,7 +97,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link className="link" to="/">
+                <Link className="link" to="/#projectDisplay-container">
                   Projects
                 </Link>
               </li>
