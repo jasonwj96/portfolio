@@ -1,5 +1,8 @@
 import React from "react";
 import "./projectDisplay.scss";
+import ngSight from "../img/ngsight.png";
+import utpRedes from "../img/matshop.png";
+import matShop from "../img/utpredes.png";
 
 const ProjectDisplay = () => {
   const projects = [
@@ -9,7 +12,8 @@ const ProjectDisplay = () => {
         <i className="fab fa-react" />,
         <i className="fab fa-sass" />
       ],
-      projectUrl: "https://github.com/jasonwj96/UtpRedes"
+      projectUrl: "https://github.com/jasonwj96/UtpRedes",
+      imageUrl: utpRedes
     },
     {
       projectName: "Matshop",
@@ -18,7 +22,8 @@ const ProjectDisplay = () => {
         <i className="fab fa-sass" />,
         <i className="fab fa-microsoft" />
       ],
-      projectUrl: "https://github.com/jasonwj96/matshop"
+      projectUrl: "https://github.com/jasonwj96/matshop",
+      imageUrl: matShop
     },
     {
       projectName: "ngSight",
@@ -27,7 +32,8 @@ const ProjectDisplay = () => {
         <i className="fab fa-js" />,
         <i className="fab fa-microsoft" />
       ],
-      projectUrl: "https://github.com/jasonwj96/ngSight"
+      projectUrl: "https://github.com/jasonwj96/ngSight",
+      imageUrl: ngSight
     }
   ];
 
@@ -38,11 +44,14 @@ const ProjectDisplay = () => {
         {projects.map((project, index) => {
           return (
             <div key={index} className="project">
-              <div className="tech-stack">
+              <div className="img-wrapper">
+                <img src={project.imageUrl} alt="tech" />
+              </div>
+              {/* <div className="tech-stack">
                 {project.techStack.map((tech, index) => {
                   return <div key={index}>{tech}</div>;
                 })}
-              </div>
+              </div> */}
               <div className="project-info">
                 <p>{project.projectName}</p>
                 <a href={project.projectUrl} className="arrow">

@@ -26,29 +26,60 @@
     .project {
       width: 100%;
       max-width: 450px;
-      height: 350px;
+      height: auto;
       display: flex;
       flex-flow: column;
-      justify-content: space-between;
       box-shadow: 1px 1px 2px 2px #00000033;
       margin: 20px 5px;
-      // border-radius: 10px;
+      border-radius: 10px;
       overflow: hidden;
+
+      &:hover {
+        .project-info {
+          transform: translateY(0%);
+        }
+
+        .img-wrapper {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .img-wrapper {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition-property: transform;
+          transition-duration: 500ms;
+          transition-timing-function: ease-in-out;
+
+          &:hover {
+            transform: scale;
+          }
+        }
+      }
 
       .tech-stack {
         padding: 20px;
         display: flex;
         justify-content: space-evenly;
-        height: 100%;
+        align-items: center;
+        height: 50px;
+        width: 100%;
 
         i {
           color: #000;
-          font-size: 3em;
-          margin: 10px;
+          font-size: 1.5em;
+          margin: 5px;
           transition-property: filter;
           transition-duration: 200ms;
           transition-timing-function: ease-in-out;
-          padding: 10px;
         }
 
         .fa-react {
@@ -73,12 +104,16 @@
       }
 
       .project-info {
-        height: 80px;
+        height: 60px;
         display: flex;
         width: 100%;
         background-color: #fff;
         justify-content: space-between;
         align-items: center;
+        transform: translateY(100%);
+        transition-property: transform;
+        transition-duration: 200ms;
+        transition-timing-function: ease-in-out;
 
         p {
           color: #000;
@@ -91,8 +126,8 @@
 
         .arrow {
           @include button();
-          width: 100px;
-          height: 80px;
+          width: 80px;
+          height: 60px;
           display: flex;
           align-items: center;
           justify-content: center;

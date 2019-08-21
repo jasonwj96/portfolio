@@ -89,7 +89,7 @@ $accent: #ff0040;
 }
 
 @mixin dark-theme() {
-  $primary-dark: #0e0e0e;
+  $primary-dark: #131313;
   background-color: $primary-dark;
   color: #fff;
 
@@ -162,7 +162,7 @@ $accent: #ff0040;
   #projectDisplay-container {
     .projects {
       .project {
-        background-color: #000;
+        background-color: #0c0c0c;
 
         .project-info {
           background-color: #0c0c0c;
@@ -303,7 +303,7 @@ $accent: #ff0040;
   #projectDisplay-container {
     .projects {
       .project {
-        background-color: #f1f1f1;
+        background-color: #ffffff;
 
         .project-info {
           background-color: #ffffff;
