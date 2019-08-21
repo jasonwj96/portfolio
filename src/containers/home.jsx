@@ -3,6 +3,7 @@ import "./home.scss";
 import HomeProfile from "../components/homeProfile";
 import Timeline from "../components/timeline";
 import Navbar from "../components/navbar";
+import ProjectDisplay from "../components/projectDisplay";
 
 const Home = () => {
   useEffect(() => {
@@ -14,6 +15,7 @@ const Home = () => {
       <Navbar />
       <HomeProfile />
       <Timeline />
+      <ProjectDisplay />
     </div>
   );
 };

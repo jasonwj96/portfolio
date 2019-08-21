@@ -1,0 +1,37 @@
+@import "../themes/themes.scss";
+
+#projectDisplay-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+
+  .project {
+    width: 500px;
+    height: 300px;
+    border: #fff 1px solid;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+
+    .tech-stack {
+      display: flex;
+      justify-content: space-evenly;
+
+      i {
+        color: #000;
+        font-size: 5em;
+        margin: 10px;
+      }
+
+      .fa-react {
+      }
+
+      .fa-sass {
+      }
+    }
+
+    .project-info {
+    }
+  }
+}
