@@ -10,6 +10,7 @@ const ProjectDisplay = () => {
       projectName: "Utp Redes",
       techStack: [
         <i className="fab fa-react" />,
+        <i className="fab fa-js" />,
         <i className="fab fa-sass" />
       ],
       projectUrl: "https://github.com/jasonwj96/UtpRedes",
@@ -19,6 +20,7 @@ const ProjectDisplay = () => {
       projectName: "Matshop",
       techStack: [
         <i className="fab fa-react" />,
+        <i className="fab fa-js" />,
         <i className="fab fa-sass" />,
         <i className="fab fa-microsoft" />
       ],
@@ -29,8 +31,9 @@ const ProjectDisplay = () => {
       projectName: "ngSight",
       techStack: [
         <i className="fab fa-angular" />,
+        <i className="fab fa-microsoft" />,
         <i className="fab fa-js" />,
-        <i className="fab fa-microsoft" />
+        <i className="fab fa-sass" />
       ],
       projectUrl: "https://github.com/jasonwj96/ngSight",
       imageUrl: ngSight
@@ -55,7 +58,12 @@ const ProjectDisplay = () => {
 
               <div className="project-info">
                 <p>{project.projectName}</p>
-                <a href={project.projectUrl} className="arrow" target="_blank">
+                <a
+                  href={project.projectUrl}
+                  className="arrow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fas fa-arrow-right" />
                 </a>
               </div>
