@@ -46,15 +46,16 @@ const ProjectDisplay = () => {
             <div key={index} className="project">
               <div className="img-wrapper">
                 <img src={project.imageUrl} alt="tech" />
+                <div className="tech-stack">
+                  {project.techStack.map((tech, index) => {
+                    return <div key={index}>{tech}</div>;
+                  })}
+                </div>
               </div>
-              {/* <div className="tech-stack">
-                {project.techStack.map((tech, index) => {
-                  return <div key={index}>{tech}</div>;
-                })}
-              </div> */}
+
               <div className="project-info">
                 <p>{project.projectName}</p>
-                <a href={project.projectUrl} className="arrow">
+                <a href={project.projectUrl} className="arrow" target="_blank">
                   <i className="fas fa-arrow-right" />
                 </a>
               </div>

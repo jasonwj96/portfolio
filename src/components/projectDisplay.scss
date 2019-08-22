@@ -22,17 +22,19 @@
     height: auto;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    position: relative;
 
     .project {
       width: 100%;
       max-width: 450px;
-      height: auto;
+      height: 100%;
       display: flex;
       flex-flow: column;
       box-shadow: 1px 1px 2px 2px #00000033;
       margin: 20px 5px;
       border-radius: 10px;
       overflow: hidden;
+      position: relative;
 
       &:hover {
         .project-info {
@@ -40,16 +42,23 @@
         }
 
         .img-wrapper {
+          position: relative;
+
           img {
             transform: scale(1.1);
+          }
+
+          .tech-stack {
+            opacity: 1;
           }
         }
       }
 
       .img-wrapper {
         width: 100%;
-        height: auto;
+        height: 100%;
         overflow: hidden;
+        z-index: 0;
 
         img {
           width: 100%;
@@ -58,48 +67,59 @@
           transition-property: transform;
           transition-duration: 500ms;
           transition-timing-function: ease-in-out;
+          position: relative;
+          z-index: 0;
 
           &:hover {
             transform: scale;
           }
         }
-      }
 
-      .tech-stack {
-        padding: 20px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 50px;
-        width: 100%;
-
-        i {
-          color: #000;
-          font-size: 1.5em;
-          margin: 5px;
-          transition-property: filter;
-          transition-duration: 200ms;
+        .tech-stack {
+          pointer-events: none;
+          padding: 70px 20px 10px 20px;
+          display: flex;
+          opacity: 0;
+          justify-content: space-evenly;
+          height: inherit;
+          width: 100%;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          position: absolute;
+          background-color: #000000ab;
+          transition-property: opacity;
+          transition-duration: 500ms;
           transition-timing-function: ease-in-out;
-        }
 
-        .fa-react {
-          color: #00aeff;
-        }
+          i {
+            color: #000;
+            font-size: 3.5em;
+            margin: 5px;
+            transition-property: filter;
+            transition-duration: 200ms;
+            transition-timing-function: ease-in-out;
+          }
 
-        .fa-sass {
-          color: #ff0077;
-        }
+          .fa-react {
+            color: #00aeff;
+          }
 
-        .fa-microsoft {
-          color: #0077ff;
-        }
+          .fa-sass {
+            color: #ff0077;
+          }
 
-        .fa-angular {
-          color: #e60000;
-        }
+          .fa-microsoft {
+            color: #0077ff;
+          }
 
-        .fa-js {
-          color: #facc00;
+          .fa-angular {
+            color: #e60000;
+          }
+
+          .fa-js {
+            color: #facc00;
+          }
         }
       }
 
@@ -114,6 +134,9 @@
         transition-property: transform;
         transition-duration: 200ms;
         transition-timing-function: ease-in-out;
+        position: absolute;
+        bottom: 0;
+        left: 0;
 
         p {
           color: #000;
@@ -135,6 +158,25 @@
 
           i {
             font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #projectDisplay-container {
+    .projects {
+      .project {
+        .img-wrapper {
+          .tech-stack {
+            padding: 50px 20px 10px 20px;
+            align-items: flex-start;
+
+            i {
+              font-size: 2em;
+            }
           }
         }
       }
